@@ -10,9 +10,7 @@
   Calculates optimal travel routes by evaluating real-world geographic distances,
   switching-line penalties, and algorithmic telemetry.
 
-<p align="center">
-  <img src="assets/Map.svg" width="550" alt="System Map Visualization">
-</p>
+
 
 <p align="center">
   <img src="static/line_logo/Bakerloo_line_roundel.png" height="30" alt="Bakerloo">
@@ -34,9 +32,8 @@
 
 The interface is designed as a **Tactical Radar Dashboard**, providing real-time feedback on algorithmic exploration and path efficiency.
 
-<p align="center">
-  <video src="assets/London_Metro_Demo.mp4" width="600" controls title="London Pathfinder Live Demo"></video>
-</p>
+https://github.com/user-attachments/assets/a8cb9a0c-e846-45c5-a63d-dffc42af6558
+
 
 ### Features:
 * **Real-Time Path Tracing:** Watch the engine plot the optimal route node-by-node with dynamic line-color coding.
