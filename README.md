@@ -10,7 +10,9 @@
   Calculates optimal travel routes by evaluating real-world geographic distances,
   switching-line penalties, and algorithmic telemetry.
 
-
+<p align="center">
+  <img src="assets/Map.svg" width="550" alt="System Map Visualization">
+</p>
 
 <p align="center">
   <img src="static/line_logo/Bakerloo_line_roundel.png" height="30" alt="Bakerloo">
