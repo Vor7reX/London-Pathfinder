@@ -1,0 +1,117 @@
+/* Base Layout and Typography */
+body { margin: 0; font-family: 'Poppins', sans-serif; color: #202124; height: 100vh; overflow: hidden; position: relative; }
+#map { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; background-color: #e5e3df; }
+
+/* EMP Flash Effect */
+#flash-overlay {
+    position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: #1a73e8; z-index: 5; opacity: 0; pointer-events: none;
+    mix-blend-mode: screen; 
+}
+
+/* Sidebar Desktop Layout */
+#sidebar { 
+    position: absolute; top: 20px; left: 20px; bottom: 20px; width: 380px; padding: 30px; 
+    display: flex; flex-direction: column; overflow-y: auto; z-index: 10; 
+    background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px) saturate(150%); 
+    -webkit-backdrop-filter: blur(10px) saturate(150%); 
+    border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15); border-radius: 20px;
+    scrollbar-width: none; -ms-overflow-style: none; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+#sidebar::-webkit-scrollbar { display: none; }
+
+/* Panel Header & Branding */
+#panel-header { cursor: default; margin-bottom: 20px; }
+.drag-handle { display: none; } 
+
+.brand-container { display: flex; align-items: center; gap: 12px; margin-bottom: 5px; }
+.brand-logo { height: 38px; width: auto; object-fit: contain; }
+.brand-text-block { display: flex; flex-direction: column; }
+
+.brand-subtitle { font-size: 11px; font-weight: 600; color: #1a73e8; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; margin-bottom: 2px; }
+h1 { color: #202124; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: -0.5px; line-height: 1; }
+
+.status { color: #1e8e3e; font-size: 12px; font-weight: 600; margin-top: 8px; }
+
+label { font-size: 13px; margin-top: 10px; display: block; color: #222; font-weight: 600; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+
+/* Custom Autocomplete Glass Morphism */
+.autocomplete-wrapper { position: relative; width: 100%; margin-top: 5px; }
+.autocomplete-wrapper input[type="text"] {
+    width: 100%; padding: 12px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.4); color: #202124; 
+    border: 1px solid rgba(255,255,255,0.5); border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s; 
+}
+.autocomplete-wrapper input[type="text"]:focus { background-color: rgba(255, 255, 255, 0.9); border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,0.2); }
+
+.suggestions-box {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 99; margin-top: 4px;
+    background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    max-height: 220px; overflow-y: auto; display: none;
+}
+.suggestions-box::-webkit-scrollbar { width: 6px; }
+.suggestions-box::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+.suggestion-item { padding: 10px 12px; cursor: pointer; font-size: 13px; border-bottom: 1px solid rgba(0,0,0,0.05); color: #333; transition: background 0.1s; }
+.suggestion-item:last-child { border-bottom: none; }
+.suggestion-item:hover { background-color: rgba(26, 115, 232, 0.1); color: #1a73e8; }
+.suggestion-item b { color: #1a73e8; }
+
+/* Action Buttons */
+button { margin-top: 25px; padding: 15px; width: 100%; background-color: #1a73e8; color: #fff; border: none; font-weight: 600; font-size: 15px; font-family: inherit; border-radius: 8px; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3); }
+button:hover { background-color: #1557b0; box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4); }
+button:disabled { background-color: rgba(241, 243, 244, 0.7); color: #9aa0a6; cursor: not-allowed; box-shadow: none; }
+
+#reset_btn { margin-top: 12px; background-color: rgba(255, 255, 255, 0.4); color: #202124; border: 1px solid rgba(0,0,0,0.2); box-shadow: none; }
+#reset_btn:hover { background-color: rgba(217, 48, 37, 0.9); color: #fff; border-color: transparent; box-shadow: 0 6px 15px rgba(217, 48, 37, 0.3); }
+
+/* Data Displays */
+#stats { margin-top: 20px; color: #1557b0; font-size: 13px; white-space: pre-wrap; line-height: 1.5; padding: 15px; background: rgba(232, 240, 254, 0.4); border-radius: 8px; border: 1px solid rgba(210, 227, 252, 0.5); font-family: monospace; }
+#itinerary { margin-top: 15px; background-color: rgba(255, 255, 255, 0.45); padding: 20px; border-radius: 8px; font-size: 14px; line-height: 1.6; border: 1px solid rgba(255,255,255,0.5); border-left: 4px solid #1a73e8; color: #202124; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+
+/* Tooltips & Leaflet Overrides */
+.leaflet-tooltip.custom-tooltip, .leaflet-tooltip.infographic-tooltip { font-family: 'Poppins', sans-serif !important; background: rgba(255, 255, 255, 0.70) !important; backdrop-filter: blur(12px) saturate(150%); -webkit-backdrop-filter: blur(12px) saturate(150%); border: 1px solid rgba(255, 255, 255, 0.9) !important; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15) !important; border-radius: 12px !important; color: #202124 !important; }
+.leaflet-tooltip.custom-tooltip { padding: 12px; }
+.leaflet-tooltip.infographic-tooltip { padding: 15px; font-size: 13px; line-height: 1.5; }
+.leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { display: none !important; }
+.tooltip-line { display: inline-flex; align-items: center; padding: 3px 8px; margin: 4px 4px 0 0; border-radius: 12px; font-size: 11px; font-weight: 600; color: white; text-shadow: 0 1px 1px rgba(0,0,0,0.2); border: 1px solid rgba(0,0,0,0.1); }
+#itinerary img, .infographic-tooltip img, .leaflet-tooltip img { height: 15px !important; width: 15px !important; object-fit: contain !important; margin-right: 6px !important; vertical-align: middle !important; background-color: #ffffff !important; border-radius: 50% !important; padding: 1px !important; box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important; }
+
+/* Custom Markers */
+.pulse-marker-start, .pulse-marker-end { border: 2px solid white; border-radius: 50%; color: #fff; font-weight: bold; text-align: center; line-height: 20px; font-size: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); font-family: 'Poppins', sans-serif; }
+.pulse-marker-start { background: #1e8e3e; }
+.pulse-marker-end { background: #d93025; }
+.leaflet-control-zoom { margin-top: 20px !important; margin-right: 20px !important; }
+.path-glow { filter: drop-shadow(0px 0px 6px rgba(26,115,232,0.8)); }
+
+.foglio-container { min-width: 220px; }
+.foglio-container strong.foglio-title { font-size: 15px; color: #1a73e8; display: block; font-weight: 700; }
+
+/* Mobile Responsive UI */
+@media (max-width: 768px) {
+    #sidebar {
+        top: auto; left: 0; bottom: 0; width: 100%; height: 75vh; 
+        border-radius: 25px 25px 0 0; padding: 15px 20px 40px 20px; box-sizing: border-box;
+        border-bottom: none; border-left: none; border-right: none;
+    }
+    
+    #panel-header { cursor: pointer; padding-bottom: 5px; margin-bottom: 10px; }
+
+    .drag-handle { 
+        display: block; width: 40px; height: 5px; background: rgba(0,0,0,0.2); 
+        border-radius: 5px; margin: 0 auto 15px auto; 
+    }
+
+    #sidebar.collapsed { transform: translateY(calc(100% - 110px)); }
+
+    .leaflet-control-zoom { display: none; } 
+    .suggestions-box { max-height: 180px; }
+    .suggestion-item { padding: 15px 12px; font-size: 15px; } 
+
+    .leaflet-tooltip.infographic-tooltip { padding: 10px !important; font-size: 11px !important; line-height: 1.4 !important; }
+    .foglio-container { min-width: 170px !important; }
+    .foglio-container strong.foglio-title { font-size: 13px !important; }
+    
+    h1 { font-size: 24px; }
+    .brand-logo { height: 32px; }
+}

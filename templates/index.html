@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>London Pathfinder - Tactical Routing Engine</title>
+    
+    <link rel="icon" type="image/png" href="/static/line_logo/general.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+    <div id="sidebar">
+        <div id="panel-header" onclick="toggleSidebar()">
+            <div class="drag-handle"></div>
+            
+            <div class="brand-container">
+                <img src="/static/line_logo/general.png" alt="London Underground Logo" class="brand-logo" onerror="this.style.display='none'">
+                <div class="brand-text-block">
+                    <div class="brand-subtitle">London Underground</div>
+                    <h1>Pathfinder</h1>
+                </div>
+            </div>
+            
+            <div class="status">● PROCESSING UNIT ACTIVE</div>
+        </div>
+
+        <label>Origin</label>
+        <div class="autocomplete-wrapper">
+            <input type="text" id="start_input" placeholder="Enter origin station..." autocomplete="off">
+            <input type="hidden" id="start_node">
+            <div id="start_suggestions" class="suggestions-box"></div>
+        </div>
+
+        <label>Destination</label>
+        <div class="autocomplete-wrapper">
+            <input type="text" id="target_input" placeholder="Enter destination station..." autocomplete="off">
+            <input type="hidden" id="target_node">
+            <div id="target_suggestions" class="suggestions-box"></div>
+        </div>
+
+        <button id="calc_btn" onclick="calculateRoute()">INITIATE SCAN</button>
+        <button id="reset_btn" onclick="resetSystem()">SYSTEM RESET</button>
+
+        <div id="stats">System ready. Awaiting coordinates.</div>
+        <div id="itinerary">Select a route to generate the itinerary.</div>
+    </div>
+
+    <div id="flash-overlay"></div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

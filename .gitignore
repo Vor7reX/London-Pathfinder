@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# C++ compilation and builds
+build/
+dist/
+*.egg-info/
+*.so
+*.dll
+*.o
+
+# Virtual environments
+venv/
+env/
+
+# OS and temp files
+data/london_map_cache.db
+.DS_Store

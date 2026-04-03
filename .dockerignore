@@ -1,0 +1,18 @@
+# Cache and local build artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.o
+*.dll
+build/
+*.egg-info/
+venv/
+env/
+.DS_Store
+
+# Local data and temp files
+data/london_map_cache.db
+static/*.html
+
+# Demos
+assets/
